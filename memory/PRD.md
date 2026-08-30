@@ -29,10 +29,11 @@ Build a mobile-first habit tracker where one Dashboard contains independent mont
 - Added direct boolean and measurable day editing, keyboard-safe scrollable entry sheet, add-habit flow with icon/type/target/unit, theme toggle, pull-to-refresh behavior, and long-press vertical drag reorder with persistence.
 - Added deterministic test IDs, environment-compatible API root fallback, QA credentials record, and backend indexes/projections for user-safe MongoDB responses.
 - Verified with backend regression and mobile UI validation through 375x667: login, create/edit/clear entries, measurable green intensity, month navigation, theme toggle, reorder persistence, and no red-screen/runtime errors.
+- Added per-habit Month | Week view toggle (Month remains default). Week view shows the current week as a single row of 7 large tappable day cells with prev/next-week navigation and week-scoped completion stats.
 
 ## Prioritized backlog
 - **P0:** None remaining for the requested MVP.
-- **P1:** Add a compact Week View with previous/next week navigation; add richer celebration/confetti particles on successful completions; optionally add Google profile image rendering.
+- **P1:** Add richer celebration/confetti particles on successful completions; optionally add Google profile image rendering.
 - **P2:** Habit editing/archive, reminder notifications, streak history insights, export/shareable monthly progress, and accessibility settings for reduced motion.
 
 ## Next task list
