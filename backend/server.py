@@ -49,6 +49,7 @@ class HabitCreate(BaseModel):
     habit_type: str = Field(pattern="^(boolean|measurable)$")
     target: Optional[float] = None
     unit: Optional[str] = None
+    color: Optional[str] = None
 
 
 class HabitUpdate(BaseModel):
@@ -56,6 +57,7 @@ class HabitUpdate(BaseModel):
     icon: Optional[str] = None
     target: Optional[float] = None
     unit: Optional[str] = None
+    color: Optional[str] = None
     hidden: Optional[bool] = None
 
 
@@ -216,6 +218,7 @@ async def create_habit(payload: HabitCreate, request: Request):
         "habit_type": payload.habit_type,
         "target": payload.target if payload.habit_type == "measurable" else None,
         "unit": payload.unit if payload.habit_type == "measurable" else None,
+        "color": payload.color,
         "order": count,
         "created_at": now_iso(),
     }

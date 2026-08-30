@@ -32,6 +32,10 @@ Build a mobile-first habit tracker where one Dashboard contains independent mont
 - Added per-habit Month | Week view toggle (Month remains default). Week view shows the current week as a single row of 7 large tappable day cells with prev/next-week navigation and week-scoped completion stats.
 - Added per-habit overflow (⋯) menu on each card with Hide and Delete (confirmation). Backend supports `hidden` boolean via PATCH `/api/habits/{id}` and full delete via DELETE `/api/habits/{id}`.
 - Replaced dashboard header theme/logout buttons with a single hamburger menu. The Settings sheet groups Appearance (System/Light/Dark), Hidden habits (with per-item Unhide), and Sign out.
+- Refreshed Tick It branding with the latest full-color mark. Auth screen shows it as a full-bleed cover from the top of the screen. Dashboard header uses a bigger "Tick It" title with a smaller greeting subtitle.
+- Habit cards were tightened: the Month/Week toggle and ⋯ menu sit inline with the habit name. The "Daily practice" subtitle is removed; measurable habits keep a compact target line. Streak moved into the card footer.
+- Added a per-habit color picker (7 preset colors) in Add Habit. Color drives the day-cell shades, completion percent, card highlights, and the Unhide chip in Settings. Backend `HabitCreate`/`HabitUpdate` accept `color`.
+- Fixed the ⋯ card menu positioning. It now anchors under the actual card's dots (measured with `measureInWindow`) instead of always appearing at the top.
 
 ## Prioritized backlog
 - **P0:** None remaining for the requested MVP.
