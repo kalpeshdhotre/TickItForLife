@@ -30,6 +30,8 @@ Build a mobile-first habit tracker where one Dashboard contains independent mont
 - Added deterministic test IDs, environment-compatible API root fallback, QA credentials record, and backend indexes/projections for user-safe MongoDB responses.
 - Verified with backend regression and mobile UI validation through 375x667: login, create/edit/clear entries, measurable green intensity, month navigation, theme toggle, reorder persistence, and no red-screen/runtime errors.
 - Added per-habit Month | Week view toggle (Month remains default). Week view shows the current week as a single row of 7 large tappable day cells with prev/next-week navigation and week-scoped completion stats.
+- Added per-habit overflow (⋯) menu on each card with Hide and Delete (confirmation). Backend supports `hidden` boolean via PATCH `/api/habits/{id}` and full delete via DELETE `/api/habits/{id}`.
+- Replaced dashboard header theme/logout buttons with a single hamburger menu. The Settings sheet groups Appearance (System/Light/Dark), Hidden habits (with per-item Unhide), and Sign out.
 
 ## Prioritized backlog
 - **P0:** None remaining for the requested MVP.

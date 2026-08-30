@@ -56,6 +56,7 @@ class HabitUpdate(BaseModel):
     icon: Optional[str] = None
     target: Optional[float] = None
     unit: Optional[str] = None
+    hidden: Optional[bool] = None
 
 
 class EntryInput(BaseModel):
