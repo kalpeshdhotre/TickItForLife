@@ -1,0 +1,20 @@
+{
+  "summary": "Mobile preview loaded at 390x844; email login, dashboard loading, habit creation, per-card month navigation, theme toggle, and authenticated API flow passed. Full measurable/day/reorder UI gestures were not completed in this run.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [{"screen": "Auth and Dashboard", "issues": ["Interactive controls have no testID/data-testid attributes, making robust mobile regression and accessibility targeting difficult."]}],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/backend/tests/test_api_regression.py", "/app/test_reports/pytest/api_results.xml", "/app/test_reports/ui/auth.png", "/app/test_reports/ui/dashboard.png"],
+  "action_items": ["Add testID to auth inputs/buttons, add-habit controls, type/icon choices, day cells, save buttons, month controls, theme/logout, and drag cards.", "Align frontend API_ROOT with the required EXPO_BACKEND_URL contract (currently it reads EXPO_PUBLIC_BACKEND_URL / expo extra backendUrl).", "Run a follow-up UI pass for measurable entry save/green intensity, boolean toggle-clear, and long-press reorder persistence."],
+  "critical_code_review_comments": ["index.tsx is a single 172-line logical file but contains all auth, dashboard, cards, and modals; maintainability would improve by splitting focused components.", "The UI relies primarily on accessibilityLabel and visible text rather than required testID attributes.", "API regression test passed register → me → create → entry → list → reorder; no mocked APIs were used."],
+  "updated_files": ["/app/backend/tests/test_api_regression.py", "/app/test_reports/iteration_1.json"],
+  "success_rate": {"backend": "100% (1/1)", "frontend": "100% for executed checks; partial feature coverage"},
+  "seed_data_creation": "Created one TEST_ account and TEST_Water habit via the public API; no seeded production data modified.",
+  "retest_needed": true,
+  "should_call_test_agent_after_fix": true,
+  "context_for_next_testing_agent": "QA account is rhythm.qa.1788082646@example.com / RhythmTest123!. Preview rendered seeded Drink Water plus newly created QA Walk. Use accessibility labels until testIDs are added.",
+  "rca_of_issue": "No runtime failures reproduced. Contract mismatch is static: frontend index.tsx constructs API_ROOT from expo extra backendUrl or EXPO_PUBLIC_BACKEND_URL, while the required configuration key is EXPO_BACKEND_URL; the current preview works only because EXPO_PUBLIC_BACKEND_URL is present."
+}

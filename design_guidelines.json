@@ -1,0 +1,136 @@
+{
+  "app_name": "Rhythm Habit Tracker",
+  "personality": "1 iOS-Native Clean",
+  "personality_one_liner": "An editorial yet tactile habit tracking experience structured around individual monthly GitHub-style habit dashboards.",
+  "color": {
+    "surface": "#FAF8F5",
+    "onSurface": "#1C1C1E",
+    "surfaceSecondary": "#F1EEE9",
+    "onSurfaceSecondary": "#3A3A3C",
+    "surfaceTertiary": "#E6E2DC",
+    "onSurfaceTertiary": "#636366",
+    "surfaceInverse": "#1C1C1E",
+    "onSurfaceInverse": "#FBFBFA",
+    "brand": "#4A6B5D",
+    "brandPrimary": "#4A6B5D",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#D48356",
+    "onBrandSecondary": "#FFFFFF",
+    "brandTertiary": "#E4ECE8",
+    "onBrandTertiary": "#2D4238",
+    "success": "#34C759",
+    "onSuccess": "#FFFFFF",
+    "warning": "#FF9500",
+    "onWarning": "#FFFFFF",
+    "error": "#FF3B30",
+    "onError": "#FFFFFF",
+    "info": "#007AFF",
+    "onInfo": "#FFFFFF",
+    "border": "#E5E1DB",
+    "borderStrong": "#C8C2BA",
+    "divider": "#EFECE6"
+  },
+  "typography": {
+    "displayFontFamily": "Plus Jakarta Sans",
+    "textFontFamily": "DM Sans",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Generous vertical breathing room, comfortable touch targets, 12-16px padding on cards, sticky bottom action bar.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": "1",
+  "navigation": "stack_only",
+  "icon_set": "Phosphor",
+  "glassmorphism": {
+    "enabled": true,
+    "do's": [
+      "Use frosted glass on sticky headers and floating bottom action bars",
+      "Apply translucent tinted base ≥70% opacity for foreground readability"
+    ],
+    "dont's": [
+      "Never blur form fields or entire screens",
+      "Never stack more than two blur surfaces"
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Auth",
+      "purpose": "Google social login and email/password account creation with clean editorial feel.",
+      "states": {
+        "loading": "Authenticating credentials...",
+        "empty": "Sign in to access your synchronized habit dashboards.",
+        "error": "Authentication failed. Please check your credentials and retry."
+      },
+      "layout": "Centered clean branding, email/password input fields with labels above, Google sign-in button with icon, toggle between sign in and sign up."
+    },
+    {
+      "name": "Dashboard",
+      "purpose": "Scrollable vertical collection of independent habit dashboards with monthly GitHub-style calendars and drag-and-rearrange.",
+      "states": {
+        "loading": "Loading your habit dashboards...",
+        "empty": "No habits tracked yet. Tap '+ Add Habit' below to start your journey.",
+        "error": "Failed to load habits. Tap retry to reconnect."
+      },
+      "layout": "Header with app title, date indicator, theme toggle, and profile avatar. Vertical list of card components representing each habit with name, streak counter, month navigation, GitHub-style monthly calendar grid, daily activity cells, and statistics summary. Sticky bottom '+ Add Habit' CTA bar."
+    },
+    {
+      "name": "AddHabit",
+      "purpose": "Create a new habit specifying name, icon, yes/no or measurable type, target value, and unit.",
+      "states": {
+        "loading": "Creating habit...",
+        "empty": "Configure your new habit parameters above.",
+        "error": "Please fill in all required fields correctly."
+      },
+      "layout": "Modal form with keyboard avoiding view, text input for habit name, icon selector grid, segmented control for habit type (Yes/No vs Measurable), target value input, unit selector, and sticky primary Save button."
+    },
+    {
+      "name": "DayDetailModal",
+      "purpose": "Inspect or edit specific day's completion value or status with confetti celebration effect.",
+      "states": {
+        "loading": "Loading day details...",
+        "empty": "No entry for this date yet.",
+        "error": "Failed to update day value."
+      },
+      "layout": "Bottom sheet or modal displaying selected date, input field for measurable habits or toggle button for Yes/No habits, status indicator, and confirm button."
+    }
+  ],
+  "images": {
+    "auth_background": {
+      "url": "https://images.unsplash.com/photo-1676042349618-9f8c85d76b7f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwYWJzdHJhY3QlMjBnZW9tZXRyaWMlMjBoYWJitat5cmFja2VyJTIwd2FsbHBhcGVyJTIwbGlnaHQlMjBjcmVhbQ&ixlib=rb-4.1.0&q=85",
+      "dark": "https://images.unsplash.com/photo-1637946175559-22c4fe13fc54?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwxfHxkYXJrJTIwb2JzaWRpYW4lMjBtaW5pbWFsaXN0JTIwZ2VvbWV0cmljJTIwYWJzdHJhY3QlMjBwYXR0ZXJuJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3ODgwODIzMzZ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Minimalist geometric backdrop for habit tracker"
+    }
+  },
+  "instructions_to_main_agent": "Ensure every habit has its own independent monthly GitHub-style calendar card stacked vertically on the dashboard. Implement month navigation per habit, day cell tapping with confetti animation for Yes/No completion and progressive green shades for measurable habits. Add long-press drag-and-rearrange directly on the dashboard. Support Google social login and email/password authentication. Provide an in-app dark/light mode toggle with device-following default."
+}
