@@ -36,6 +36,8 @@ Build a mobile-first habit tracker where one Dashboard contains independent mont
 - Habit cards were tightened: the Month/Week toggle and ⋯ menu sit inline with the habit name. The "Daily practice" subtitle is removed; measurable habits keep a compact target line. Streak moved into the card footer.
 - Added a per-habit color picker (7 preset colors) in Add Habit. Color drives the day-cell shades, completion percent, card highlights, and the Unhide chip in Settings. Backend `HabitCreate`/`HabitUpdate` accept `color`.
 - Fixed the ⋯ card menu positioning. It now anchors under the actual card's dots (measured with `measureInWindow`) instead of always appearing at the top.
+- Added Edit to the card's ⋯ menu. Edit lets users change name, icon, color, and (for measurable habits) target/unit. Type is locked and cannot be changed after creation. Backend PATCH `/api/habits/{id}` accepts partial updates.
+- Today's date box now has a distinct 2px dark border across all cards so the current day is immediately spottable in month and week views.
 
 ## Prioritized backlog
 - **P0:** None remaining for the requested MVP.
